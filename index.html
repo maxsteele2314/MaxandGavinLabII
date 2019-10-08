@@ -8,6 +8,7 @@
         by hand. This is what we did as the students; we learned how to do it a quick way by using javascript. The first problem of
         the lab was already given to us, as we went over it in class. So, the first problem will be the one where you grab the mean 
         of just the first penguin.</p1>
+  
     <h2> Problem Number 1</h2>
     <pre>var firstAnswer =  d3.mean(classroom[0].quizes,getGrade)
 
@@ -18,6 +19,7 @@ var answer= firstAnswer;
     <p1> So in the first one we just wanted the mean for the first penguin alone so we go to the array and we wanted the quizes
         alone. We already had the function to grab the array to get the grades. 
     We also had to use d3.mean for it to give us the mean for the penguin.</p1>
+  
     <h2> Problem Number 2</h2>
     <pre>
     var getPenguinMean = function(penguin)
@@ -51,6 +53,109 @@ var answer= getPenguinMean(classroom[0]);
         in an array. So we have to find the mean of the array if gave us. Since we gave it name all we had to do was us d3.mean and 
         put the array name in and it gave us the mean.  </p1>
     
+  <h3> Problem 5 </h3>
+    <pre> 
+            var getPenguinPicture = function(penguin)
+ { var obj = {}
+   obj.pic = penguin.picture
+   return obj
+ }
+    </pre>
+  
+  
+    <p1> 
+   In this question we had to return an object from the penguin which included one attribute which was the image. Since
+      we were making a penguin object we gave the function a penguin. After this we created an object and left it open
+      with the{} brackets. When then gave that object the penguin and gave it a secondary command of the picture so
+      that was the attribute  it would return. The last step was to return the object with the attribute of penguin image.
+    </p1>
+  
+   <h3> Problem 6 </h3>
+    <pre> 
+        var getPenguinQuizMeanPic = function(penguin)
+ { var obj = {}
+   obj.pic = penguin.picture
+   obj.quizMean = d3.mean(penguin.quizes,getGrade)
+   return obj
+ }
+    </pre>
+  
+  
+    <p1> 
+    This question asked us to expand our last question function and have it include a new attribute of QuizMean. So all the 
+      previous function was just copied down and we added a new object. In this object we pushed a d3.mean function to grab
+      a penguins quiz scores and find it's mean score. Then to close we still just returned our object containing both 
+      attributes in the same object.
+    </p1>
+  
+   <h3> Problem 7 </h3>
+    <pre> 
+      var getAllPenguinPicQuiz = function(classroom)
+    {var obj = {}
+     obj.allPic = classroom.map(getPenguinPicture)
+     obj.allQuiz = d3.mean(fourthAnswer)
+      return obj
+    }
+    </pre>
+  
+  
+    <p1> 
+    This question is similiar to the one above but instead of finding the image and quizmean of a given penguin it wants
+      those attributes for all the penguins in an object. Since we want all penguins we give our function the classroom
+      which includes all the penguins. After this we can take a previous Map of (getPenguinPicture) to return all the
+      pictures of all penguins in the classroom. We have also already found the quiz mean for all penguins in the fourth question 
+      So we took the d3 mean function, gave it our previous command and just placed it inside our object with images. After
+      returning the object we had all images and the Quiz mean for all penguins.
+    </p1>
+  
+   <h3> Problem 8 </h3>
+    <pre> 
+        var getPenguinInfo = function(penguin)
+    {var obj ={}
+     obj.pic = penguin.picture
+     obj.quiz =  d3.mean(penguin.quizes,getGrade)
+     obj.test =  d3.mean(penguin.test,getTest)
+     obj.hw = d3.mean(penguin.homework,getHW)
+     obj.final = d3.mean(penguin.final,getFinal)
+         return obj
+    }
+    </pre>
+  
+  
+    <p1> 
+    This question asked for a function that generated a picture, meanQuiz, meanTest, meanHW amd final grade for a given 
+      penguin. Since we were back to a given penguin we gave our function a penguin instead of classroom. We now took 
+      our bases of previous functions and modified them to grab each specific thing whether that be quiz, hw, etc.. 
+      We gave each of these atrributes to our empty object so that when we return our object it will contain all five of 
+      these attributes. After the return function it gave us the correct answer.
+    </p1>
+  
+   <h3> Problem 9 </h3>
+    <pre> 
+     var getPenguinInfoObj = function(penguin)
+    {var objp ={}
+     obj.pic = penguin.picture
+    }
+    {var objq = {}    
+     obj.quiz =  d3.mean(penguin.quizes,getGrade)
+    }
+    {var objt = {}
+     obj.test =  d3.mean(penguin.test,getTest)
+    }
+    {var objh = {}
+     obj.hw = d3.mean(penguin.homework,getHW)
+    }
+    {var objf = {}
+     obj.final = d3.mean(penguin.final,getFinal)
+    }
+         return objp, objq, objt, objh, objf
+    </pre>
+  
+  
+    <p1> 
+  
+    </p1>
     
+  
 </body>
 </html>
